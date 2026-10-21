@@ -1,0 +1,3 @@
+# Extra Python packages for the easy_store Odoo module (Odoo itself brings its own dependencies)
+Pillow>=10.0
+phonenumbers>=8.13

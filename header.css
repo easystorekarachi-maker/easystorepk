@@ -1,0 +1,26 @@
+.topbar{background:var(--top);color:#fff;text-align:center;padding:8px 12px;font-size:13px}
+.hdr{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+.hrow{display:flex;align-items:center;gap:14px;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:8px;font-size:25px;font-weight:800;letter-spacing:-.5px;color:var(--ink);white-space:nowrap}.brand:hover{text-decoration:none}.brand b{color:var(--g)}
+.hsearch{flex:1;display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--soft)}
+.hsearch input{flex:1;border:0;background:transparent;padding:10px 12px;min-width:0}
+.hsearch button{background:var(--g);color:#fff;border:0;padding:0 18px;font-weight:600;cursor:pointer}
+.hacts{display:flex;gap:14px;align-items:center}.hact{color:var(--ink);display:flex;align-items:center;gap:5px;font-size:14px;white-space:nowrap}
+.cart-count{background:var(--g);color:#fff;border-radius:10px;padding:0 7px;font-size:12px}
+.lang-btn{border:1px solid var(--line);background:#fff;border-radius:6px;padding:5px 10px;cursor:pointer}
+.menu-btn{display:none;background:none;border:0;font-size:24px;cursor:pointer}
+.nav{border-top:1px solid var(--line)}.nav .wrap{display:flex;gap:22px;flex-wrap:wrap;align-items:center;padding-block:10px}
+.nav a{color:var(--ink);white-space:nowrap;font-size:14px}.nav a.on,.nav a:hover{color:var(--g);font-weight:600}
+
+.nav-more{position:relative}.nav-more-btn{background:none;border:0;font:inherit;font-size:14px;color:var(--ink);cursor:pointer;padding:0}.nav-more-btn:hover,.nav-more.open .nav-more-btn{color:var(--g);font-weight:600}
+.nav-drop{display:none;position:absolute;top:calc(100% + 10px);inset-inline-start:0;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.12);padding:6px;z-index:40}
+.nav-more.open .nav-drop{display:grid}.nav-drop a{padding:9px 12px;border-radius:6px}.nav-drop a:hover{background:var(--soft)}
+@media(max-width:800px){.nav-drop{position:static;box-shadow:none;border:0;padding:4px 0 0 12px;min-width:0}.nav-more-btn{font-size:15px}}
+
+
+
+.brand-logo{display:block;height:46px;width:auto;max-width:100%;object-fit:contain}
+@media(max-width:600px){.brand-logo{height:36px}}
+
+.brand-text{font-size:24px;font-weight:800;letter-spacing:-.5px;color:var(--ink);margin-inline-start:8px}.brand-text b{color:var(--g)}
+@media(max-width:600px){.brand-text{font-size:19px}}

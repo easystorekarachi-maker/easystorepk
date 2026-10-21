@@ -1,0 +1,20 @@
+{
+  "packageId": "com.easystore.app",
+  "host": "YOUR-DOMAIN.com",
+  "name": "EasyStore",
+  "launcherName": "EasyStore",
+  "display": "standalone",
+  "orientation": "portrait",
+  "themeColor": "#0b5d2a",
+  "navigationColor": "#ffffff",
+  "backgroundColor": "#0b5d2a",
+  "enableNotifications": false,
+  "startUrl": "/index.html?source=app",
+  "iconUrl": "https://YOUR-DOMAIN.com/icon-512.png",
+  "maskableIconUrl": "https://YOUR-DOMAIN.com/icon-maskable-512.png",
+  "webManifestUrl": "https://YOUR-DOMAIN.com/manifest.json",
+  "fallbackType": "customtabs",
+  "appVersionName": "1.0.0",
+  "appVersion": "1",
+  "signingKey": {"path": "./easystore-release.keystore", "alias": "easystore"}
+}

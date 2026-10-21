@@ -1,0 +1,6 @@
+order_id,date,customer,phone,city,payment,status,items,total
+ES-261001-1001,2026-10-01,Ali Raza,03001234567,Karachi,cod,delivered,Wireless Earbuds Pro x1; Travel & Laptop Backpack x1,6998
+ES-261003-1002,2026-10-03,Sara Khan,03111234567,Lahore,cod,shipped,Android Smartphone 128GB x1,38999
+ES-261005-1003,2026-10-05,Bilal Ahmed,03211234567,Islamabad,bank,pending,Men’s Running Shoes x2; Football Size 5 x1,4747
+ES-261008-1004,2026-10-08,Hina Malik,03331234567,Karachi,wallet,delivered,Vitamin C Face Serum x2; Plush Teddy Bear x1,2797
+ES-261012-1005,2026-10-12,Usman Tariq,03451234567,Faisalabad,cod,cancelled,"Ultrabook Laptop 14"" x1",89999
