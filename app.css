@@ -1,0 +1,90 @@
+/* EasyStore – mobile app layer (splash, login/register screen, bottom tabs, download corner) */
+
+/* ---------- Splash (logo animation when the app opens) ---------- */
+#es-splash{font-family:"Segoe UI",Roboto,Arial,sans-serif;position:fixed;inset:0;z-index:2147483000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px;color:#fff;
+ background:radial-gradient(circle at 50% 38%,var(--sp2,#1c8a47) 0,var(--sp1,#0b5d2a) 72%);transition:opacity .45s ease,transform .45s ease}
+#es-splash.out{opacity:0;transform:scale(1.05);pointer-events:none}
+.sp-wrap{position:relative;display:grid;place-items:center;margin-bottom:10px}
+.sp-ring,.sp-ring2{position:absolute;border-radius:50%;border:3px solid rgba(255,255,255,.28);animation:spRing 1.8s ease-out .5s both}
+.sp-ring{inset:-30px}.sp-ring2{inset:-56px;animation-delay:.8s;border-color:rgba(255,255,255,.16)}
+.sp-logo{position:relative;width:128px;height:128px;border-radius:30px;background:#fff;padding:14px;object-fit:contain;box-shadow:0 18px 50px rgba(0,0,0,.35);animation:spLogo 1.3s cubic-bezier(.2,.9,.25,1.1) both}
+.sp-name{font-size:30px;font-weight:700;letter-spacing:.3px;animation:spUp .7s ease .9s both}
+.sp-tag{font-size:14px;opacity:.88;max-width:280px;animation:spUp .7s ease 1.15s both}
+.sp-bar{width:150px;height:4px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden;margin-top:22px;animation:spUp .5s ease 1s both}
+.sp-bar i{display:block;height:100%;background:#fff;border-radius:4px;transform-origin:left center;animation:spBar var(--d,2.6s) linear both}
+@keyframes spLogo{0%{opacity:0;transform:scale(.1) rotate(-540deg)}65%{opacity:1;transform:scale(1.12) rotate(18deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes spRing{0%{opacity:0;transform:scale(.5)}40%{opacity:1}100%{opacity:0;transform:scale(1.25)}}
+@keyframes spUp{0%{opacity:0;transform:translateY(16px)}100%{opacity:1;transform:none}}
+@keyframes spBar{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){.sp-logo{animation:spUp .5s ease both}.sp-ring,.sp-ring2{display:none}}
+
+/* ---------- Phone friendliness (website + app) ---------- */
+@media(max-width:640px){
+ html{-webkit-text-size-adjust:100%}
+ body{overflow-x:hidden}
+ input,select,textarea{font-size:16px}
+ .btn{min-height:44px}
+ table{max-width:100%}
+ .pd-grid img,.pgrid img{max-width:100%;height:auto}
+}
+
+/* ---------- App mode ---------- */
+html.es-app{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:contain}
+html.es-app body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px));-webkit-user-select:none;user-select:none}
+html.es-app input,html.es-app textarea,html.es-app select,html.es-app p,html.es-app h1,html.es-app h2,html.es-app h3{-webkit-user-select:text;user-select:text}
+html.es-app .hdr{padding-top:env(safe-area-inset-top,0px)}
+html.es-app .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+html.es-app .hw-fab{margin-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
+html.es-app .hw-panel{margin-bottom:calc(66px + env(safe-area-inset-bottom,0px));max-height:calc(100vh - 200px)}
+html.es-app a:hover{text-decoration:none}
+html.es-app .btn,html.es-app .hact,html.es-app .cat,html.es-app .ccard{transition:transform .12s ease}
+html.es-app .btn:active,html.es-app .cat:active,html.es-app .ccard:active{transform:scale(.97)}
+
+#es-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:#fff;border-top:1px solid var(--line,#e3e8e4);padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -4px 18px rgba(0,0,0,.07)}
+#es-nav a{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px 7px;font-size:11px;line-height:1.2;color:var(--mute,#5f6b63);text-decoration:none}
+#es-nav a.on{color:var(--g,#0b5d2a);font-weight:600}
+#es-nav a.on::before{content:"";position:absolute;top:0;width:28px;height:3px;border-radius:0 0 3px 3px;background:var(--g,#0b5d2a)}
+#es-nav svg{width:23px;height:23px}
+#es-nav b{position:absolute;top:3px;inset-inline-start:calc(50% + 6px);background:var(--red,#b3261e);color:#fff;border-radius:9px;font-size:10px;min-width:17px;height:17px;line-height:17px;text-align:center;padding:0 4px}
+#es-nav b:empty,#es-nav b[data-n="0"]{display:none}
+
+/* ---------- Login / Register screen inside the app ---------- */
+html.es-auth #site-header,html.es-auth #site-footer,html.es-auth .skip,html.es-auth .hw-fab,html.es-auth .hw-panel,html.es-auth #es-nav,html.es-auth .es-dl{display:none!important}
+html.es-auth body{padding-bottom:24px;background:#f4f6f4}
+.es-authhead{position:relative;background:linear-gradient(160deg,var(--g,#0b5d2a),#16843f);color:#fff;text-align:center;padding:calc(34px + env(safe-area-inset-top,0px)) 20px 56px;border-radius:0 0 32px 32px}
+.es-authhead img{width:84px;height:84px;margin:0 auto 10px;background:#fff;border-radius:22px;padding:9px;object-fit:contain;box-shadow:0 10px 28px rgba(0,0,0,.25)}
+.es-authhead h1{margin:0;font-size:24px}
+.es-authhead p{margin:4px 0 0;font-size:13px;opacity:.9}
+.es-lang{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));inset-inline-end:14px;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.45);border-radius:20px;padding:6px 14px;font-size:13px;cursor:pointer}
+.es-tabs{display:flex;gap:6px;max-width:320px;margin:18px auto 0;background:rgba(0,0,0,.18);border-radius:14px;padding:4px}
+.es-tabs a{flex:1;color:#fff;padding:10px 6px;border-radius:11px;font-weight:600;font-size:14px;text-decoration:none}
+.es-tabs a.on{background:#fff;color:var(--g,#0b5d2a)}
+html.es-auth main .box.narrow{position:relative;margin:-26px auto 0;max-width:440px;background:#fff;border:0;border-radius:20px;box-shadow:0 10px 34px rgba(0,0,0,.12);padding:22px 20px}
+html.es-auth .box.narrow .page-title{font-size:20px;margin-top:0}
+html.es-auth .box.narrow .btn{min-height:48px;font-size:16px;border-radius:12px}
+html.es-auth .box.narrow input{min-height:46px;border-radius:10px}
+
+/* ---------- Update banner ---------- */
+#es-upd{position:fixed;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:70;background:var(--ink,#16201a);color:#fff;border-radius:12px;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px;box-shadow:0 8px 26px rgba(0,0,0,.3)}
+#es-upd button{background:#fff;color:var(--g,#0b5d2a);border:0;border-radius:8px;padding:7px 14px;font-weight:700;cursor:pointer}
+html:not(.es-app) #es-upd{bottom:16px;max-width:420px;margin:auto}
+
+/* ---------- "Download the app" corner (website only) ---------- */
+.es-dl{position:fixed;bottom:18px;z-index:55;font-family:inherit}
+.es-dl.l{inset-inline-start:14px}.es-dl.r{inset-inline-end:14px}
+.es-dl-row{display:flex;align-items:center;gap:6px}
+.es-dl-btn{display:flex;align-items:center;gap:8px;background:var(--g,#0b5d2a);color:#fff;border:0;border-radius:999px;padding:10px 16px 10px 12px;font:600 13px/1 inherit;box-shadow:0 6px 18px rgba(0,0,0,.28);cursor:pointer}
+.es-dl-btn svg{width:22px;height:22px;flex:none}
+.es-dl-x{width:24px;height:24px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:14px;line-height:24px;padding:0;cursor:pointer}
+.es-dl-panel{display:none;position:absolute;bottom:54px;width:310px;max-width:calc(100vw - 28px);background:#fff;color:var(--ink,#16201a);border-radius:18px;box-shadow:0 16px 48px rgba(0,0,0,.3);padding:16px}
+.es-dl.l .es-dl-panel{inset-inline-start:0}.es-dl.r .es-dl-panel{inset-inline-end:0}
+.es-dl.open .es-dl-panel{display:block}
+.es-dl-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.es-dl-head img{width:52px;height:52px;border-radius:13px;border:1px solid var(--line,#e3e8e4);padding:4px;object-fit:contain;background:#fff}
+.es-dl-head b{display:block;font-size:16px}.es-dl-head small{color:var(--mute,#5f6b63);font-size:12px;line-height:1.35;display:block}
+.es-dl-a{display:flex;align-items:center;gap:10px;margin-top:9px;padding:12px 14px;border-radius:12px;background:var(--g,#0b5d2a);color:#fff!important;font-weight:600;font-size:14px;text-decoration:none!important;border:0;width:100%;cursor:pointer;font-family:inherit}
+.es-dl-a svg{width:22px;height:22px;flex:none}
+.es-dl-a.play{background:#111}
+.es-dl-a.alt{background:var(--g2,#e7f2ea);color:var(--g,#0b5d2a)!important}
+.es-dl-note{margin:10px 0 0;font-size:12px;color:var(--mute,#5f6b63);line-height:1.5}
+@media(max-width:520px){.es-dl{bottom:14px}.es-dl-btn{padding:9px 13px 9px 10px}}

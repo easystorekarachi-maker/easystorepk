@@ -1,0 +1,7 @@
+.cart-grid{display:grid;grid-template-columns:1fr 340px;gap:22px;align-items:start}
+.ci-img{width:64px;height:64px;border-radius:8px;object-fit:cover;background:var(--soft)}
+.ci-name{display:flex;gap:12px;align-items:center;color:var(--ink)}
+.sum{display:grid;gap:10px}.sum div{display:flex;justify-content:space-between}.sum .tot{font-size:20px;font-weight:700;border-top:1px solid var(--line);padding-top:10px}
+.rm{background:none;border:0;color:var(--red);cursor:pointer}
+
+.ci-size{display:block;font-size:12px;color:var(--mute);font-weight:400}

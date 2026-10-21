@@ -1,0 +1,13 @@
+product_id,sku,name,category,stock,reorder_level,unit_price,status
+1,EST-0001,Wireless Earbuds Pro,electronics,40,10,5999,OK
+2,EST-0002,Smart Fitness Watch,electronics,18,10,12999,OK
+3,EST-0003,Travel & Laptop Backpack,fashion,60,10,999,OK
+4,EST-0004,Men’s Running Shoes,sports,35,10,1649,OK
+5,EST-0005,Pressure Cooker 5L,home-kitchen,22,10,2399,OK
+6,EST-0006,Android Smartphone 128GB,mobiles,9,10,38999,LOW
+7,EST-0007,"Ultrabook Laptop 14""",electronics,5,10,89999,LOW
+8,EST-0008,Winter Hoodie,fashion,48,10,1799,OK
+9,EST-0009,Vitamin C Face Serum,beauty,70,10,899,OK
+10,EST-0010,Plush Teddy Bear,toys-games,30,10,749,OK
+11,EST-0011,Football Size 5,sports,44,10,1199,OK
+12,EST-0012,Blender 600W,home-kitchen,14,10,3499,OK

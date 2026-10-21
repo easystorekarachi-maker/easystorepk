@@ -1,0 +1,5 @@
+@media(max-width:900px){
+.strip{grid-template-columns:1fr 1fr}.cats{grid-template-columns:repeat(4,1fr)}.cat i{width:62px;height:62px}
+.pd-grid,.cart-grid,.co-grid{grid-template-columns:1fr}.shop-layout{grid-template-columns:1fr}.filters{position:static}.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){.menu-btn{display:block}.hrow{flex-wrap:wrap}.hsearch{order:5;flex-basis:100%}.nav{display:none}.hdr.open .nav{display:block}.hdr.open .nav .wrap{flex-direction:column;gap:10px}.plus{padding:22px}}
+@media(max-width:520px){.pgrid{grid-template-columns:1fr 1fr;gap:10px}.fgrid{grid-template-columns:1fr}.hact span{display:none}}

@@ -1,0 +1,4 @@
+/* EasyStore – mobile navigation toggle */
+(function(){const close=()=>{const h=ES.$('.hdr');if(h){h.classList.remove('open');const b=ES.$('.menu-btn');b&&b.setAttribute('aria-expanded','false')}};
+document.addEventListener('click',e=>{const mb=e.target.closest('.nav-more-btn');ES.$$('.nav-more.open').forEach(x=>{if(!mb||x!==mb.parentNode){x.classList.remove('open');x.firstChild.setAttribute('aria-expanded','false')}});if(mb){const o=mb.parentNode.classList.toggle('open');mb.setAttribute('aria-expanded',o);return}const b=e.target.closest('.menu-btn');if(b){const h=ES.$('.hdr'),o=h.classList.toggle('open');b.setAttribute('aria-expanded',o)}else if(e.target.closest('.nav a'))close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();ES.$$('.nav-more.open').forEach(x=>x.classList.remove('open'))}})})();

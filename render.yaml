@@ -1,0 +1,23 @@
+# Render.com blueprint: node server.js + a persistent disk so products, orders,
+# pictures and project.json survive restarts and redeploys.
+services:
+  - type: web
+    name: easystore
+    runtime: node
+    plan: starter            # persistent disks need a paid instance
+    buildCommand: echo "no build step"
+    startCommand: node gitsync.js pull && node server.js
+    healthCheckPath: /index.html
+    envVars:
+      - key: STORAGE_DIR
+        value: /var/data
+      - key: GITHUB_TOKEN    # optional: keeps data on a GitHub branch (see README)
+        sync: false
+      - key: GITHUB_REPO     # e.g. yourname/easystore.pk
+        sync: false
+      - key: ADMIN_PASSWORD  # set it in the Render dashboard (used on first start only)
+        sync: false
+    disk:
+      name: easystore-data
+      mountPath: /var/data
+      sizeGB: 1

@@ -1,0 +1,7 @@
+/* Urdu / RTL overrides – applied when <html dir="rtl"> */
+html[dir=rtl] body{font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Segoe UI",Tahoma,Arial,sans-serif;line-height:1.9}
+html[dir=rtl] .hero h1{letter-spacing:0}
+html[dir=rtl] .gnav{transform:translateY(-50%) scaleX(-1)}
+html[dir=rtl] .crumbs span,html[dir=rtl] .sec-head a{direction:rtl}
+html[dir=rtl] .hsearch button{border-radius:0}
+html[dir=rtl] .pprice,html[dir=rtl] .pd-price,html[dir=rtl] .co-line b{direction:ltr;unicode-bidi:plaintext}

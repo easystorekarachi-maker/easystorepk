@@ -1,0 +1,4 @@
+.ftr{background:var(--top);color:#cfe3d5;margin-top:48px;padding:34px 0 18px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:24px}
+.ftr h3{color:#fff;font-size:15px;margin:0 0 10px}.ftr a{color:#cfe3d5;display:block;margin-bottom:6px}.ftr p{margin:0 0 8px}
+.fbot{border-top:1px solid rgba(255,255,255,.18);margin-top:22px;padding-top:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px}
